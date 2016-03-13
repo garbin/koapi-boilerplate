@@ -32,5 +32,8 @@ npm run knex seed:run
 ## Test
 
 ```bash
-npm test
+# For unit testing
+make test
+# For code coverage testing
+make test-cov
 ```
