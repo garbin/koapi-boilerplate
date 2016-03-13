@@ -15,13 +15,21 @@ A Koapi boilerplate
 
 ## Run dev server
 
+### dev server
 ```bash
 npm run dev
 ```
 
-## Run build server
+### apidoc
+
 ```bash
-npm start
+npm run apidoc:watch
+```
+
+### serve apidoc
+
+```bash
+npm run apidoc:serve
 ```
 
 ## Build
@@ -37,7 +45,7 @@ npm run build
 npm test
 
 # For code coverage testing
-npm run test-cov
+npm run test:cover
 ```
 
 ## Database maintenance
