@@ -1,14 +1,22 @@
 BIN = node
-MOCHA_OPTS = --require should --require should-http --compilers js:babel-core/register
-# TESTS = test/http \
-# 				test/units \
-# 				test/experimental/index.js
+BABEL = ./node_modules/.bin/babel-node
+MOCHA_REQUIRED = --require should --require should-http
+
 TESTS = test/routers \
 				test/units
 test:
 	@NODE_ENV=test $(BIN) \
 		./node_modules/.bin/mocha \
-		$(MOCHA_OPTS) \
+		$(MOCHA_REQUIRED) \
+		$(TESTS) \
+		--bail
+
+test-cov:
+	@NODE_ENV=test $(BIN) \
+		./node_modules/.bin/istanbul cover \
+		./node_modules/.bin/_mocha \
+		-- \
+		$(MOCHA_REQUIRED) \
 		$(TESTS) \
 		--bail
 

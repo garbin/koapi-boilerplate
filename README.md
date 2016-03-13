@@ -28,3 +28,9 @@ npm run knex seed:run
 # other knex migration tools
 ...
 ```
+
+## Test
+
+```bash
+npm test
+```
