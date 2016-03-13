@@ -1,15 +1,21 @@
 'use strict';
 
-var _koapi = require('koapi');
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.server = undefined;
+
+var _koapi = require('/work/koapi/src/koapi');
 
 var _koapi2 = _interopRequireDefault(_koapi);
 
-var _development = require('./config/development');
-
-var _development2 = _interopRequireDefault(_development);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var env = process.env.NODE_ENV || 'development';
 
 var app = new _koapi2.default();
 
-app.run(_development2.default);
+var server = app.run(require('./config/' + env));
+
+exports.default = app;
+exports.server = server;

@@ -1,6 +1,7 @@
 BIN = node
 BABEL = ./node_modules/.bin/babel-node
 MOCHA_REQUIRED = --require should --require should-http
+KNEXFILE = ./knexfile.js
 
 TESTS = test/routers \
 				test/units

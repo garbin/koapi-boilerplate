@@ -2,7 +2,7 @@
   "name": "koapi-boilerplate",
   "version": "0.1.0",
   "description": "RESTful API framework based on koajs",
-  "main": "app.js",
+  "main": "build/app.js",
   "babel": {
     "presets": [
       "es2015",
@@ -10,11 +10,13 @@
     ]
   },
   "scripts": {
-    "build": "babel --presets es2015,stage-0 -d build/ src/",
-    "dev"  : "nodemon -L -x ./node_modules/.bin/babel-node src/app.js",
-    "test-cov": "make test-cov && http-server ./coverage -p 4003",
+    "build": "babel -d build/ src/",
+    "dev"  : "NODE_ENV=development nodemon -L -x ./node_modules/.bin/babel-node src/app.es",
+    "test-cov": "NODE_ENV=test && npm run db:rollback && npm run db:setup && make test-cov && http-server ./coverage -p 4003",
     "start": "npm run build && node build/app.js",
-    "test": "make test",
+    "test": "NODE_ENV=test && npm run db:rollback && npm run db::setup && make test",
+    "db:rollback":"knex migrate:rollback",
+    "db:setup":"knex migrate:latest && knex seed:run",
     "knex": "knex"
   },
   "repository": {

@@ -19,6 +19,23 @@ module.exports = {
     },
   },
 
+  test: {
+    client: 'mysql',
+    connection: {
+      host     : 'ubuntu',
+      user     : 'root',
+      password : '123456',
+      database : 'blog_test',
+      charset  : 'utf8'
+    },
+    migrations: {
+      directory: './database/migrations',
+    },
+    seeds:{
+      directory: './database/seeds',
+    },
+  },
+
   staging: {
     client: 'postgresql',
     connection: {

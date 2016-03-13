@@ -14,14 +14,5 @@ module.exports = {
   serve: {
     root: __dirname + '/../../storage/public',
   },
-  knex: {
-    client: 'mysql',
-    connection: {
-      host     : 'ubuntu',
-      user     : 'root',
-      password : '123456',
-      database : 'blog',
-      charset  : 'utf8'
-    }
-  },
+  knex: require('../../knexfile').development,
 };
