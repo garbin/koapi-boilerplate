@@ -32,7 +32,7 @@ test-cover:
 		$(TESTS) \
 		--bail
 
-cover-server:
+coverage-server:
 	 ./node_modules/.bin/http-server ./coverage -p $(COVER_PORT)
 
 apidoc-server:

@@ -1,4 +1,4 @@
-import Koapi from '/work/koapi/src/koapi';
+import Koapi from 'koapi';
 
 var env = process.env.NODE_ENV || 'development';
 

@@ -1,4 +1,4 @@
-import {Router} from '/work/koapi/src/koapi';
+import {Router} from 'koapi';
 import Comment from '../models/comment';
 import Posts from './posts';
 
