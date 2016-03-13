@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _koapi = require('/work/koapi/src/koapi');
+var _koapi = require('koapi');
 
 var _post = require('../models/post');
 

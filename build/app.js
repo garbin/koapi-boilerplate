@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.server = undefined;
 
-var _koapi = require('/work/koapi/src/koapi');
+var _koapi = require('koapi');
 
 var _koapi2 = _interopRequireDefault(_koapi);
 
