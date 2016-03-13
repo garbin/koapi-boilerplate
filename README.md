@@ -17,25 +17,26 @@ A Koapi boilerplate
 
 ### dev server
 ```bash
-npm run dev
+npm run dev:server
 ```
 
-### apidoc
+### watch apidoc
 
 ```bash
-npm run apidoc:watch
+npm run dev:apidoc
 ```
 
 ### serve apidoc
 
 ```bash
-npm run apidoc:serve
+npm run serve:apidoc
+```
+### serve coverage
+
+```bash
+npm run serve:coverage
 ```
 
-## Build
-```bash
-npm run build
-```
 
 
 ## Test
@@ -45,7 +46,7 @@ npm run build
 npm test
 
 # For code coverage testing
-npm run test:cover
+npm run test:coverage
 ```
 
 ## Database maintenance
@@ -67,4 +68,9 @@ npm run knex seed:run
 
 # other knex migration tools
 ...
+```
+
+## Build
+```bash
+npm run build
 ```
