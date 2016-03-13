@@ -15,9 +15,9 @@
     "build": "babel -d build/ src/",
     "knex": "knex",
     "dev": "NODE_ENV=development nodemon -L -x ./node_modules/.bin/babel-node src/app.es",
-    "test:cover": "export NODE_ENV=test && npm run db:rollback && npm run db:setup && make test-cov && http-server ./coverage -p 4003",
+    "test:cover": "export NODE_ENV=test && npm run db:rollback && npm run db:setup && make test-cover && make cover-server",
     "apidoc:watch": "gulp apidoc:watch",
-    "apidoc:serve": "http-server ./docs -p 4004",
+    "apidoc:serve": "make apidoc-server",
     "db:rollback": "knex migrate:rollback",
     "db:setup": "knex migrate:latest && knex seed:run"
   },
@@ -39,6 +39,7 @@
   "homepage": "https://github.com/garbin/koapi-boilerplate#readme",
   "dependencies": {
     "koapi": "*",
+    "moment": "^2.12.0",
     "mysql": "^2.10.2"
   },
   "devDependencies": {
