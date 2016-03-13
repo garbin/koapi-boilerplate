@@ -11,9 +11,10 @@
   },
   "scripts": {
     "build": "babel --presets es2015,stage-0 -d build/ src/",
-    "dev"    : "nodemon -L -x ./node_modules/.bin/babel-node src/app.js",
-    "start"  : "npm run build && node build/app.js",
-    "knex"   : "knex"
+    "dev": "nodemon -L -x ./node_modules/.bin/babel-node src/app.js",
+    "start": "npm run build && node build/app.js",
+    "test": "make test",
+    "knex": "knex"
   },
   "repository": {
     "type": "git",
@@ -32,8 +33,13 @@
   },
   "homepage": "https://github.com/garbin/koapi-boilerplate#readme",
   "dependencies": {
+    "co-supertest": "0.0.10",
     "koapi": "*",
-    "mysql": "^2.10.2"
+    "mocha": "^2.4.5",
+    "mysql": "^2.10.2",
+    "should": "^8.2.2",
+    "should-http": "0.0.4",
+    "supertest": "^1.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",

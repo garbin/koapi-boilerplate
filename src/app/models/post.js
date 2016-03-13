@@ -1,4 +1,4 @@
-import { Model } from 'koapi';
+import { Model } from '/work/koapi/src/koapi';
 import Comment from './comment';
 import Joi from 'joi';
 

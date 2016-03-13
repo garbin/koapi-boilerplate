@@ -1,6 +1,10 @@
-import Koapi from 'koapi';
-import config from './config/development';
+import Koapi from '/work/koapi/src/koapi';
 
-var app  = new Koapi();
+var env = process.env.NODE_ENV || 'development';
 
-app.run(config);
+const app  = new Koapi();
+
+var server = app.run(require('./config/' + env));
+
+export default app;
+export {server};

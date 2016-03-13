@@ -1,14 +1,6 @@
 module.exports = {
-  port: 4001,
-  debug: {
-    request: {
-      logger:{
-        name: 'debug',
-        streams:[{path:__dirname + '/../../storage/logs/debug.log'}],
-      },
-      options: {}
-    }
-  },
+  port: null,
+  debug: false,
   cors: true,
   routers: __dirname + '/../app/routers/**/*',
   serve: {
