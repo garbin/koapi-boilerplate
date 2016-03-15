@@ -10,13 +10,15 @@
     ]
   },
   "scripts": {
-    "start": "NODE_CONFIG_DIR=./src/config npm run build && node build/app.js",
-    "test": "export NODE_ENV=test && npm run db:rollback && npm run db:setup && make test",
+    "start": "NODE_CONFIG_DIR=./build/config npm run build && node build/app.js",
     "build": "babel -d build/ src/",
+    "cli":"NODE_CONFIG_DIR=./build/config node build/cli.js",
+    "test": "export NODE_ENV=test && npm run db:rollback && npm run db:setup && make test",
     "knex": "knex",
     "test:coverage": "export NODE_ENV=test && npm run db:rollback && npm run db:setup && make test-cover",
     "dev:server": "NODE_CONFIG_DIR=./src/config NODE_ENV=development nodemon -L -x ./node_modules/.bin/babel-node src/app.es",
     "dev:apidoc": "gulp apidoc:watch",
+    "dev:cli": "NODE_ENV=development NODE_CONFIG_DIR=./src/config babel-node src/cli.es",
     "serve:apidoc": "make apidoc-server",
     "serve:coverage": "make coverage-server",
     "db:rollback": "knex migrate:rollback",
