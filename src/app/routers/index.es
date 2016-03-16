@@ -31,4 +31,8 @@ const index = new Router();
     this.body = 'Hello World! I\'m an API';
   });
 
+  index.post('/', function *() {
+    this.body = this.request.body;
+  });
+
 export default index;

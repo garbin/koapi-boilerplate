@@ -10,6 +10,7 @@ module.exports = {
     }
   },
   cors: true,
+  middlewares: __dirname + '/../app/middlewares',
   routers: __dirname + '/../app/routers/**/*',
   serve: {
     root: __dirname + '/../../storage/public',
