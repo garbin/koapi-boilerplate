@@ -10,19 +10,18 @@
     ]
   },
   "scripts": {
-    "start": "NODE_CONFIG_DIR=./build/config npm run build && node build/app.js",
+    "start": "NODE_CONFIG_DIR=./src/config npm run build && node build/app.js",
+    "test": "export NODE_ENV=test && export NODE_CONFIG_DIR=./src/config && npm run db:rollback && npm run db:setup && make test",
     "build": "babel -d build/ src/",
-    "cli":"NODE_CONFIG_DIR=./build/config node build/cli.js",
-    "test": "export NODE_ENV=test && npm run db:rollback && npm run db:setup && make test",
     "knex": "knex",
-    "test:coverage": "export NODE_ENV=test && npm run db:rollback && npm run db:setup && make test-cover",
-    "dev:server": "NODE_CONFIG_DIR=./src/config NODE_ENV=development nodemon -L -x ./node_modules/.bin/babel-node src/app.es",
+    "test:coverage": "export NODE_ENV=test && export NODE_CONFIG_DIR=./src/config && npm run db:rollback && npm run db:setup && make test-cover",
+    "dev:server": "NODE_CONFIG_DIR=./src/config nodemon -L -x ./node_modules/.bin/babel-node src/app.es",
     "dev:apidoc": "gulp apidoc:watch",
-    "dev:cli": "NODE_ENV=development NODE_CONFIG_DIR=./src/config babel-node src/cli.es",
     "serve:apidoc": "make apidoc-server",
     "serve:coverage": "make coverage-server",
     "db:rollback": "knex migrate:rollback",
-    "db:setup": "knex migrate:latest && knex seed:run"
+    "db:setup": "knex migrate:latest && knex seed:run",
+    "debug:log": "bunyan ./storage/logs/debug.log"
   },
   "repository": {
     "type": "git",
@@ -42,6 +41,7 @@
   "homepage": "https://github.com/garbin/koapi-boilerplate#readme",
   "dependencies": {
     "config": "^1.19.0",
+    "http-server": "^0.9.0",
     "koapi": "*",
     "moment": "^2.12.0",
     "mysql": "^2.10.2"

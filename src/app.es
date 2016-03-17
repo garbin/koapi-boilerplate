@@ -1,7 +1,8 @@
-import Koapi from 'koapi';
+import Koapi, {Model} from 'koapi';
 import config from 'config';
 
-var env = process.env.NODE_ENV || 'development';
+// init knex and bookshelf
+Model.init(config.knex);
 
 const app  = new Koapi();
 

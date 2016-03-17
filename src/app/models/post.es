@@ -6,7 +6,7 @@ export const fields = {
   title: Joi.string().alphanum().min(3).max(30),
 };
 
-export default Model({
+export default Model.extend({
   tableName: 'posts',
   hasTimestamps: true,
   schema: {

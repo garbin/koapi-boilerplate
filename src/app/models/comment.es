@@ -1,6 +1,6 @@
 import { Model } from 'koapi';
 
-export default Model({
+export default Model.extend({
   tableName: 'comments',
   hasTimestamps: true,
 });
