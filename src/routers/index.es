@@ -1,4 +1,4 @@
-import {Router} from 'koapi';
+import {Router} from '/work/koapi/src/koapi';
 
 const index = new Router();
 
@@ -28,6 +28,7 @@ const index = new Router();
    *     }
    */
   index.get('/', function*(){
+    throw Error('haha');
     this.body = 'Hello World! I\'m an API';
   });
 

@@ -1,5 +1,5 @@
 import Post from '../models/post';
-import {Model} from 'koapi';
+import {Model} from '/work/koapi/src/koapi';
 
 export default {
   command: 'example [test]',

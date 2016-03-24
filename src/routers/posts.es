@@ -1,4 +1,4 @@
-import {Router} from 'koapi';
+import {Router} from '/work/koapi/src/koapi';
 import Post from '../models/post';
 
 const posts = new Router();

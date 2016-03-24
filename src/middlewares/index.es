@@ -1,5 +1,5 @@
 module.exports = [
-  function *(next) {
+  function* (next) {
     yield next;
   }
 ];
