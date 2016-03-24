@@ -1,4 +1,4 @@
-import {Router} from '/work/koapi/src/koapi';
+import {Router} from 'koapi';
 
 const index = new Router();
 

@@ -1,4 +1,4 @@
-import { Model } from '/work/koapi/src/koapi';
+import { Model } from 'koapi';
 
 export default Model.extend({
   tableName: 'comments',

@@ -1,4 +1,4 @@
-import Koapi, {Model} from '/work/koapi/src/koapi'
+import Koapi, {Model} from 'koapi'
 import config from 'config'
 import require_all from 'require-all'
 import _ from 'lodash';
