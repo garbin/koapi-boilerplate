@@ -11,4 +11,5 @@ module.exports = {
     }
   },
   cors: true,
+  knex: require('../knexfile')[process.env.NODE_ENV || 'development'],
 };
