@@ -4,7 +4,6 @@ var glob    = require('glob');
 var commands = './build/commands/**/*.js';
 var Model   = require('koapi').Model;
 var config  = require('config');
-var co      = require('co');
 var _       = require('lodash');
 
 Model.init(config.knex);
@@ -27,10 +26,11 @@ glob.sync(commands).forEach(function (file, index) {
     program.option(k, cmd.options[k]);
   });
   if (cmd.description) program.description(cmd.description);
-  if (cmd.action) program.action(function () {
-    co(cmd.action.bind.apply(
-              cmd.action,
-              [null].concat(Array.prototype.slice.call(arguments)))).then(done).catch(done);
+  if (cmd.action) program.action(function(){
+    cmd.action.apply(cmd.action,
+                     Array.prototype.slice.call(arguments))
+                     .then(done)
+                     .catch(done);
   });
 });
 

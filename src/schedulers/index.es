@@ -1,4 +1,4 @@
-import command from '../commands/index';
+import command from '../commands/example';
 
 export default {
   name: 'Example',

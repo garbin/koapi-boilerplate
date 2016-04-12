@@ -1,11 +1,11 @@
 import Post from '../models/post';
 import {Model} from 'koapi';
 
+// see https://github.com/tj/commander.js
 export default {
   command: 'example [test]',
   description: 'Example',
-  action: function* (test, options) {
-    console.log(test);
-    console.log(yield Post.fetchAll());
+  action: async (cmd, test, options) => {
+    console.log(await Post.fetchAll());
   }
 };

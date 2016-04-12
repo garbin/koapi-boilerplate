@@ -16,6 +16,8 @@
     "test": "export NODE_ENV=test && npm run db:rollback && npm run db:setup && make test",
     "build": "babel -d build/ src/",
     "cli": "node cli.js",
+    "scheduler": "node scheduler.js",
+    "babel": "babel-node",
     "knex": "knex",
     "apidoc": "gulp apidoc",
     "test:coverage": "export NODE_ENV=test && npm run db:rollback && npm run db:setup && make test-cover",
@@ -48,7 +50,7 @@
     "config": "^1.19.0",
     "cron": "^1.1.0",
     "http-server": "^0.9.0",
-    "koapi": "*",
+    "koapi": "^0.2.*",
     "moment": "^2.12.0",
     "mysql": "^2.10.2",
     "require-all": "^2.0.0"

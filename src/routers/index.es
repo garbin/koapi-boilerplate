@@ -27,13 +27,13 @@ const index = new Router();
    *       "error": "UserNotFound"
    *     }
    */
-  index.get('/', function*(){
+  index.get('/', async (ctx) => {
     throw Error('haha');
-    this.body = 'Hello World! I\'m an API';
+    ctx.body = 'Hello World! I\'m an API';
   });
 
-  index.post('/', function *() {
-    this.body = this.request.body;
+  index.post('/', async (ctx) => {
+    ctx.body = ctx.request.body;
   });
 
 export default index;

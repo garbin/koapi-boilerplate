@@ -4,7 +4,6 @@ var glob    = require('glob');
 var schedulers = './build/schedulers/**/*.js';
 var Model   = require('koapi').Model;
 var config  = require('./config');
-var co      = require('co');
 var _       = require('lodash');
 
 Model.init(config.knex);
@@ -42,10 +41,10 @@ glob.sync(schedulers).forEach(function (file, index) {
     var job = new CronJob({
       cronTime: scheduler.schedule,
       onTick: function () {
-        co(scheduler.do).then(job_done.bind(job, scheduler)).catch(job_error);
+        scheduler.do().then(job_done.bind(job, scheduler)).catch(job_error);
       },
       onComplete: function () {
-        co(scheduler.complete).then(function(){}).catch(function(err){console.log(err);});
+        scheduler.complete().then(function(){}).catch(function(err){console.log(err);});
       },
       start: true,
     });

@@ -1,5 +1,5 @@
 import Koapi, {Model} from 'koapi'
-import config from 'config'
+import config from '../config'
 import require_all from 'require-all'
 import _ from 'lodash';
 import path from 'path';
