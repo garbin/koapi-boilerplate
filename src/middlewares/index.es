@@ -1,5 +1,3 @@
 module.exports = [
-  function* (next) {
-    yield next;
-  }
+  async (ctx, next) => { await next(); }
 ];
