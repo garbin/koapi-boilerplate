@@ -1,6 +1,6 @@
 var path = require('path');
 module.exports = {
-  port: 3000,
+  port: process.env.LC_APP_PORT,
   debug: {
     request: {
       logger:{
@@ -11,5 +11,4 @@ module.exports = {
     }
   },
   cors: true,
-  knex: require('../knexfile')[process.env.NODE_ENV || 'development'],
 };

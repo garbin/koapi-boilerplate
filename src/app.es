@@ -6,9 +6,6 @@ import path from 'path';
 import fs from 'fs-extra';
 import {storage} from './lib/helper';
 
-// init knex and bookshelf
-Model.init(config.knex);
-
 const app  = new Koapi();
 
 var server = app.run(Object.assign({
