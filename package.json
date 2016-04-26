@@ -49,6 +49,7 @@
   "homepage": "https://github.com/garbin/koapi-boilerplate#readme",
   "dependencies": {
     "babel-polyfill": "^6.7.4",
+    "bunyan": "^1.8.1",
     "commander": "^2.9.0",
     "config": "^1.20.1",
     "cron": "^1.1.0",
@@ -78,6 +79,6 @@
     "supertest": "^1.2.0"
   },
   "engines": {
-  "node": "4.x"
-}
+    "node": "4.x"
+  }
 }
