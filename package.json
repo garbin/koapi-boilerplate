@@ -10,7 +10,7 @@
     ]
   },
   "scripts": {
-    "start": "export NODE_ENV=production && node server.js",
+    "start": "export NODE_ENV=production && node --harmony server.js",
     "staging": "export NODE_ENV=staging && npm run build && node build/app.js",
     "production": "export NODE_ENV=production && npm run build && node build/app.js",
     "test": "export NODE_ENV=test && npm run db:rollback && npm run db:setup && make test",
