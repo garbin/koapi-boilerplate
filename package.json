@@ -76,5 +76,8 @@
     "should": "^8.2.2",
     "should-http": "0.0.4",
     "supertest": "^1.2.0"
-  }
+  },
+  "engines": {
+  "node": "4.x"
+}
 }
