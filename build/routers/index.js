@@ -35,13 +35,16 @@ var index = new _koapi.Router();
  *       "error": "UserNotFound"
  *     }
  */
-index.get('/_test', function () {
+index.get('/__engine/1/ping', function () {
   var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee(ctx) {
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            ctx.body = 'Hello World! I\'m an API';
+            ctx.body = {
+              "runtime": "nodejs-" + process.version,
+              "version": "custom"
+            };
 
           case 1:
           case 'end':

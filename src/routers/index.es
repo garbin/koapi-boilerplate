@@ -27,8 +27,14 @@ const index = new Router();
    *       "error": "UserNotFound"
    *     }
    */
-  index.get('/_test', async (ctx) => {
-    ctx.body = 'Hello World! I\'m an API';
+  index.get('/__engine/1/ping', async (ctx) => {
+    ctx.body = {
+      "runtime": "nodejs-" + process.version,
+      "version": "custom"
+    };
   });
+
+
+
 
 export default index;
