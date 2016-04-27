@@ -6,7 +6,12 @@ import path from 'path';
 import fs from 'fs-extra';
 import {storage} from './lib/helper';
 
+import historyApiFallback from 'koa-history-api-fallback'
+import convert from 'koa-convert'
+
 const app  = new Koapi();
+
+app.koa.use(convert(historyApiFallback({ verbose:true })));
 
 var server = app.run(Object.assign({
   middlewares: require('./middlewares'),
