@@ -9,4 +9,9 @@ AV.initialize(APP_ID, APP_KEY, MASTER_KEY);
 AV.Cloud.useMasterKey();
 
 require('babel-polyfill');
-require('./build/app');
+if (process.env.NODE_ENV='development') {
+  require('babel-register');
+  require('./src/app');
+} else {
+  require('./build/app');
+}

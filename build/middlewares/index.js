@@ -10,4 +10,7 @@ var _koaConvert2 = _interopRequireDefault(_koaConvert);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-module.exports = [(0, _koaConvert2.default)((0, _koaHistoryApiFallback2.default)())];
+module.exports = {
+  before: [],
+  after: [(0, _koaConvert2.default)((0, _koaHistoryApiFallback2.default)({ verbose: true }))]
+};
